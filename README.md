@@ -1,5 +1,5 @@
 # Java List Util
-An ECMAScript Array styled Java utility class for java.util.List.
+An ECMAScript [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) styled Java utility class for java.util.List.
 
 ## Example
 #### In JavaScript
