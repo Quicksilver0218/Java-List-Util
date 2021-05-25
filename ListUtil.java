@@ -468,6 +468,8 @@ public enum ListUtil {;
      */
     public static <T,R> List<R> map(List<T> list, Mapper<? super T, ? extends R> mapper) {
         List<R> result = new ArrayList<>(list.size());
+        for (int i = 0; i < list.size(); i++)
+            result.add(null);
         forEach(list, (element, index, list1) -> result.set(index, mapper.apply(element, index, list1)));
         return result;
     }
