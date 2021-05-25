@@ -188,7 +188,6 @@ public enum ListUtil {;
      * @return The modified list, filled with item.
      */
     public static <T> List<T> fill(List<T> list, T item) {
-        Objects.requireNonNull(list);
         int size = list.size();
         list.clear();
         for (int i = 0; i < size; i++)
@@ -332,7 +331,6 @@ public enum ListUtil {;
      * @return A new <b>List</b> instance.
      */
     public static <T,R> List<R> from(Collection<? extends T> collection, Mapper<? super T, ? extends R> mapper) {
-        Objects.requireNonNull(collection);
         List<R> result = new ArrayList<>(collection.size());
         List<T> cList = new ArrayList<>(collection);
         forEach(cList, (element, index, list) -> result.set(index, mapper.apply(element, index, list)));
@@ -444,7 +442,6 @@ public enum ListUtil {;
      * @return The last index of the element in the list; -1 if not found.
      */
     public static <T> int lastIndexOf(List<T> list, T item, int fromIndex) {
-        Objects.requireNonNull(list);
         if (fromIndex >= list.size())
             fromIndex = list.size() - 1;
         if (fromIndex < 0) {
@@ -470,7 +467,6 @@ public enum ListUtil {;
      * @return A new list with each element being the result of the callback function.
      */
     public static <T,R> List<R> map(List<T> list, Mapper<? super T, ? extends R> mapper) {
-        Objects.requireNonNull(list);
         List<R> result = new ArrayList<>(list.size());
         forEach(list, (element, index, list1) -> result.set(index, mapper.apply(element, index, list1)));
         return result;
@@ -711,7 +707,6 @@ public enum ListUtil {;
      * @return The sorted list. Note that the list is sorted in place, and no copy is made.
      */
     public static <T> List<T> sort(List<T> list, Comparator<? super T> comparator) {
-        Objects.requireNonNull(list);
         List<T> newList = list.stream().sorted(comparator).collect(Collectors.toList());
         ListIterator<T> iterator = newList.listIterator();
         for (int i = 0; i < newList.size(); i++)
