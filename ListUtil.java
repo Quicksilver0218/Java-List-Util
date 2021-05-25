@@ -481,7 +481,7 @@ public enum ListUtil {;
      */
     @SafeVarargs
     public static <T> List<T> of(T... items) {
-        return Arrays.asList(items);
+        return new ArrayList<>(Arrays.asList(items));
     }
 
     /**
